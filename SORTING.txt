@@ -1,0 +1,20 @@
+package demo07;
+
+public class Sorting {
+ public static <T extends Comparable<T>> void selectionSort (T[] data)  {
+      int min;
+      T temp;
+     
+      for (int index = 0; index < data.length-1; index++) {
+	  min = index;
+          for (int scan = index+1; scan < data.length; scan++)
+            if (data[scan].compareTo(data[min])<0)
+                min = scan;
+
+         /** Swap the values */
+         temp = data[min];
+         data[min] = data[index];
+         data[index] = temp;
+      }
+   }
+ }
